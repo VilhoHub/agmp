@@ -1,0 +1,107 @@
+[
+  {
+    "Topic/Website": "Africa GeoPortal",
+    "What is on the Website": "A platform which offers a range of geospatial tools and datasets which are focused on Africa.  Resources available:  OpenStreetMap data, satellite imagery as well as thematic maps.  Geospatial data is shared, analyzed and combined by users and oragnizations. ",
+    "Powered by": "Esri",
+    "Available Link ": "https://www.africageoportal.com/",
+    "Logos": "assests/Africa GeoPortal.png"
+  },
+  {
+    "Topic/Website": "Global Earth Obseravtion System of Systems (GEOSS)",
+    "What is on the Website": "It is an earth observation, information and processing system.  Thus, it facilitates the sharing of environmental data and information collected a large assemblage of observing systems.  This data is also contributed by countries and various organizations.  ",
+    "Powered by": "Group on Earth Observations (GEO)",
+    "Available Link ": "https://old.earthobservations.org/geoss.php",
+    "Logos": "assests/GEOSS.png"
+  },
+  {
+    "Topic/Website": "Regional Centre for Mapping of Resources for Development (RCMRD)",
+    "What is on the Website": "Focuses on research and development, dissemination of geospatial data as well as capacity develoment & training amongst other core missions.  Runs several projects.  One of them, AfriGeo is an initiative of the African continent in Group on Earth Observations (GEO).  ",
+    "Powered by": "Regional Centre for Mapping of Resources for Development (RCMRD)",
+    "Available Link ": "https://rcmrd.org/en/",
+    "Logos": "assests/RCMRD.jpg"
+  },
+  {
+    "Topic/Website": "Sambus Geospatial - Nigeria GeoPortal ",
+    "What is on the Website": "For open geospatial datasets in the Nation which avails you the opportunity access a variety of geospatial tools, open data, training, and learning resources to help you grow your geospatial skills and enrich the existing resource via contribution.  additionally, providing a range of geospatial solutions to all industries.  ",
+    "Powered by": "Sambus Geospatial (sgl)",
+    "Available Link ": "https://sambusgeospatial.com/the-nigeria-geoportal/",
+    "Logos": "assests/Sambus Geospatial - Nigeria GeoPortal.png"
+  },
+  {
+    "Topic/Website": "Dunia",
+    "What is on the Website": "New service for African data users of Copernicus Sentinels data.  It enables fast Earth observation data access through data processing and a great dissemination platform.  Moreover, Dunia provides cloud development environments, equipped with popular and powerful data processing tools like JuypterLab and QGIS.  ",
+    "Powered by": "Catalysts Africa",
+    "Available Link ": "A Data Platform For Africa: Discover Dunia – Catalysts",
+    "Logos": "assests/Dunia.png"
+  },
+  {
+    "Topic/Website": "ArcGIS",
+    "What is on the Website": "A comprehensive geospatial platform for professionals and organizations.  It is the leading geographic information system technology.  Most importantly, it supports essential business and government operations through its various problem solving systems, namely spatial analytics, imagery and remote sensing.  ",
+    "Powered by": "Esri",
+    "Available Link ": "https://www.esri.com/en-us/arcgis/geospatial-platform/overview",
+    "Logos": "assests/ArcGIS.png"
+  },
+  {
+    "Topic/Website": "Digital Earth Africa (DE Africa)",
+    "What is on the Website": "By taking open and free data provided by international satellite programs, such as Landsat and Sentinel that have been processed according to a set of rquirements to allow immediate analysis.  This allows format of the data to be more accessible through the DE Africa platform.  Thus granting a the larger range of non-specialist  users to use the very valuable information, i.e. satellite data for sustainable developmet, water resources and flood risks as well as climate action and reporting.  DE Africa in fact translates the Earth's observations into knowledge that will support sustainable development across Africa.  ",
+    "Powered by": "Digital Earth Africa",
+    "Available Link ": "https://www.digitalearthafrica.org/products-and-services/datasets",
+    "Logos": "assests/Digital Earth Africa.png"
+  },
+  {
+    "Topic/Website": "Digital Earth Africa Landsat Collection 2 Level 2",
+    "What is on the Website": "Provides free and open access to a copy of Landsat Collection 2 Level-2 products over Africa.  Additionally, DE Africa provides data from Landsat 5, 7 and 8 satellites.  ",
+    "Powered by": "",
+    "Available Link ": "https://registry.opendata.aws/deafrica-landsat.\n",
+    "Logos": "assests/Digital Earth Africa.png"
+  },
+  {
+    "Topic/Website": "Malawi Data Portal - Spatial Agent",
+    "What is on the Website": "Various types of information, data and insights available, focusing on the geospatial information about Malawi.  Data such as satellite precipitation, google earth engine datasets, GDACS, MODIS Imagery, Landsat Imagery and more.  ",
+    "Powered by": "Spatial Agent",
+    "Available Link ": "https://spatialagent.org/Malawi/",
+    "Logos": "assests/MalawiDataPortal.png"
+  },
+  {
+    "Topic/Website": "African Surveyors",
+    "What is on the Website": "Develop revolutionary change across industries through geospatial technology, knowledge and data.  ",
+    "Powered by": "African Surveyors Connect",
+    "Available Link ": "https://africansurveyors.net/",
+    "Logos": "assests/African Surveyors Connect.png"
+  },
+  {
+    "Topic/Website": "Africa Information Highway",
+    "What is on the Website": "It is a mega network of live open data platforms (ODPs) electronically linking all African countries and 16 regional organizations.  The primary objective is to greatly increase public access to official and other statistics across Africa.  Additionally, supporting African countries to improve data quality, management and dissemination.  ",
+    "Powered by": "Africa Development Bank Group",
+    "Available Link ": "https://dataportal.opendataforafrica.org/data#menu=topic",
+    "Logos": "assests/AIH.PNG"
+  },
+  {
+    "Topic/Website": "Digital Earth SA (DESA)",
+    "What is on the Website": "Aims to influence emerging technlogies as well as provide users with standardized and easily accesible satellite data that allows for immediate analysis with a minimum of additional user effort.  ",
+    "Powered by": "Digital Earth South Africa",
+    "Available Link ": "https://desa.sansa.org.za/",
+    "Logos": "assests/DESA.png"
+  },
+  {
+    "Topic/Website": "South African National Space Agency (SANSA)",
+    "What is on the Website": "Includes a portfolio of satellite imagery which contains a sensor, such as Landsat which provides a closer real-time high resolution satellite data.  This data is essential for disaster as well as resource management.  ",
+    "Powered by": "SANSA",
+    "Available Link ": "https://www.sansa.org.za/products-services2/earth-observation/",
+    "Logos": "assests/SANSA.png"
+  },
+  {
+    "Topic/Website": "European Organisation for the Exploration of Meteorological Satellites (EUMETSAT)",
+    "What is on the Website": "A satellite agency which provides comprehensive support to developing countries, particularly in Africa (monitoring weather, climate and the environment).  ",
+    "Powered by": "EUMETSAT",
+    "Available Link ": "https://www.eumetsat.int/work-us/support-africa",
+    "Logos": "assests/EUMETSAT.png"
+  },
+  {
+    "Topic/Website": "Namibia GeoPortal",
+    "What is on the Website": "It is an online platform that provides access to geospatial data related to Namibia. It is designed to support research, exploration, and decision-making in fields such as geology, hydrogeology, environmental management, and natural resource exploration.  Some key features include; geospatial data access, interactive mapping, as well as data download amongst other things.  ",
+    "Powered by": "Esri",
+    "Available Link ": "https://namibia.africageoportal.com/",
+    "Logos": "assests/NAM_Geoportal.png"
+  }
+]

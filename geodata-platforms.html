@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geodata Platforms - Africa Geoscience Metadata Platform</title>
+
+  <!-- ✅ Stylesheets -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 🌍 Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Africa Geoscience Metadata Platform</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="geodata-inventory.html">Metadata Inventory</a></li>
+          <li class="nav-item"><a class="nav-link" href="african-projects.html">African Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="geodata-platforms.html">Geodata Platforms</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🛰️ Geodata Platforms Section -->
+  <section id="platforms">
+    <div class="container">
+      <h2>Geospatial Platforms in Africa</h2>
+      <p class="lead">Explore platforms that provide geospatial tools and datasets across Africa.</p>
+
+      <!-- 🌟 Featured Platforms -->
+      <h3>Featured Platforms</h3>
+      <div class="featured-platforms">
+        <a href="https://www.digitalearthafrica.org/" target="_blank" class="platform-card">
+          <img src="images/digital-earth.png" alt="Digital Earth Africa">
+          <h4>Digital Earth Africa</h4>
+          <p>Providing satellite imagery for Africa’s environmental and economic insights.</p>
+        </a>
+        <a href="https://www.africageoportal.com/" target="_blank" class="platform-card">
+          <img src="images/africa-geoportal.png" alt="Africa GeoPortal">
+          <h4>Africa GeoPortal</h4>
+          <p>Offering GIS tools and geospatial data for analysis and mapping.</p>
+        </a>
+        <a href="https://www.globalforestwatch.org/" target="_blank" class="platform-card">
+          <img src="images/global-forest.png" alt="Global Forest Watch">
+          <h4>Global Forest Watch</h4>
+          <p>Monitoring forest cover changes in real time across Africa.</p>
+        </a>
+      </div>
+
+      <!-- 🔍 All Platforms (Loaded Dynamically from JSON) -->
+      <h3>All Geodata Platforms</h3>
+      <div id="platforms-grid" class="platforms-grid"></div>
+    </div>
+  </section>
+
+  <!-- 📜 Footer -->
+  <footer>
+    <p>&copy; 2025 Africa Geoscience Metadata Platform</p>
+  </footer>
+
+  <!-- ✅ Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
