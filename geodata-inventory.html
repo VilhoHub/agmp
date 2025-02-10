@@ -21,17 +21,162 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+      /* 🎨 Define Color Variables */
+      :root {
+        --primary-color: #adc178;
+        /* Olive Green */
+        --secondary-color: #a98467;
+        /* Earth Brown */
+        --background-color: #f0ead2;
+        /* Sand Beige */
+        --accent-color: #dde5b6;
+        /* Pale Green */
+        --dark-color: #6c584c;
+        /* Deep Brown */
+        --text-color: #3d3d3d;
+        /* Dark Grey for readability */
+      }
+
+      /* 🔤 Define Font Variables */
+      :root {
+        --primary-font: "Lora", serif;
+        --body-font: "Inter", sans-serif;
+      }
+
+      /* ==========================
+ ✨ Global Styles
+ ========================== */
+
       body {
-        font-family: "Inter", sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #f8f8f8;
+        font-family: var(--body-font);
+        font-size: 16px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+
+      /* ==========================
+ 🏗️ Navigation Bar
+ ========================== */
+
+      .navbar {
+        background: var(--dark-color);
+        padding: 8px 10px;
+      }
+
+      .navbar-brand {
+        font-family: var(--primary-font);
+        font-weight: 700;
+        color: white !important;
+        font-size: 1.5rem;
+      }
+
+      .navbar-nav .nav-link {
+        font-family: var(--body-font);
+        font-weight: 600;
+        color: white !important;
+        padding: 8px 12px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--accent-color) !important;
+      }
+
+      /* ==========================
+ 🏠 Header & Hero Section
+ ========================== */
+
+      header {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 40px 15px;
+      }
+
+      header h1 {
+        font-family: var(--primary-font);
+        font-weight: 700;
+        font-size: 2rem;
+      }
+
+      header p {
+        font-family: var(--body-font);
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      /* ==========================
+ 📦 Sections & Cards
+ ========================== */
+
+      section {
+        background: white;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid var(--accent-color);
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      }
+
+      /* Hover effect for interactivity */
+      section:hover {
+        transform: scale(1.01);
+        border-color: var(--secondary-color);
+      }
+
+      /* ==========================
+ 🔘 Buttons
+ ========================== */
+
+      .btn-primary {
+        background-color: var(--primary-color) !important;
+        border-color: var(--primary-color) !important;
+        font-family: var(--body-font);
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-color) !important;
+        border-color: var(--secondary-color) !important;
+        transform: scale(1.05);
+      }
+
+      /* ==========================
+ 🌍 Dropdown Fix
+ ========================== */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background: var(--dark-color);
+        border-radius: 5px;
+        padding: 10px;
+        z-index: 10;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu a {
+        color: black !important;
+        padding: 8px 15px;
+        display: block;
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--accent-color);
+        color: var(--dark-color) !important;
       }
 
       #main {
-        width: 90%;
-        max-width: 1200px;
+        width: auto;
+        max-width: 98%;
         margin: 20px auto;
         text-align: center;
         padding: 20px;
@@ -45,6 +190,7 @@
         justify-content: space-between;
         gap: 20px;
         margin-top: 20px;
+        height: 550px;
       }
 
       #sidebar {
@@ -64,28 +210,35 @@
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: auto;
       }
 
       #map {
         width: 100%;
-        height: 500px;
+        height: 550px;
         border-radius: 8px;
       }
 
       #country-section {
         margin-top: 30px;
-        width: 100%;
+        width: 97%;
         background: #fff;
         padding: 20px;
+        border: 2px solid var(--accent-color);
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
 
+      #countrySelect {
+        border: 2px solid var(--dark-color);
+      }
+
       .metadata-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
         margin-top: 15px;
+        width: 97%;
       }
 
       @media screen and (max-width: 1024px) {
@@ -101,12 +254,50 @@
           height: 400px;
         }
       }
+
+      
+/* ==========================
+   📄 Footer
+   ========================== */
+
+footer {
+  background: var(--dark-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position:static;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ==========================
+ 📱 Responsive Design
+ ========================== */
+
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 1rem;
+  }
+
+  .navbar-nav {
+      text-align: center;
+  }
+
+  section {
+      margin: 5px;
+  }
+}
+
     </style>
   </head>
 
   <body>
     <!-- 🌍 Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="index.html"
           >Africa Geoscience Metadata Platform</a
@@ -122,10 +313,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="geodata-inventory.html"
+              <a class="nav-link" href="geodata-inventory.html"
                 >Metadata Inventory</a
               >
             </li>
@@ -136,7 +327,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="geodata-platforms.html"
-                >Geodata Platforms</a
+                >Geoscience Platforms</a
               >
             </li>
             <li class="nav-item">
@@ -144,6 +335,24 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <!-- 🌍 Language Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="languageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Language
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">French</a></li>
+                <li><a class="dropdown-item" href="#">Portuguese</a></li>
+                <li><a class="dropdown-item" href="#">Swahili</a></li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -185,7 +394,7 @@
     </section>
 
     <!-- 📜 Footer -->
-    <footer class="text-center py-3 bg-dark text-white">
+    <footer>
       <p>&copy; 2025 Africa Geoscience Metadata Platform</p>
     </footer>
 
@@ -291,23 +500,32 @@
           };
         }
 
-        // Add Legend to Map
+        let legend; // Declare a global legend variable
+
+        // Add Legend to Map (only once)
         function addLegend() {
-          let legend = L.control({ position: "bottomright" });
-
-          legend.onAdd = function (map) {
-            let div = L.DomUtil.create("div", "info legend");
-            div.innerHTML += "<strong>Data Availability</strong><br>";
-            div.innerHTML +=
-              '<i style="background: green; width: 15px; height: 15px; display: inline-block; margin-right: 5px;"></i> Available Data<br>';
-            return div;
-          };
-
-          legend.addTo(map);
+            if (legend) return; // If legend already exists, do nothing
+        
+            legend = L.control({ position: "bottomright" });
+        
+            legend.onAdd = function (map) {
+                let existingLegend = document.querySelector(".info.legend"); // Check if legend exists
+                if (existingLegend) existingLegend.remove(); // Remove if already added
+        
+                let div = L.DomUtil.create("div", "info legend");
+                div.innerHTML += "<strong>Data Availability</strong><br>";
+                div.innerHTML += 
+                    '<i style="background: green; width: 15px; height: 15px; display: inline-block; margin-right: 5px;"></i> Available Data<br>';
+                return div;
+            };
+        
+            legend.addTo(map);
         }
-
-        // Call the function to add legend after initializing the map
-        addLegend();
+        
+        // Call this function **only once** after initializing the map
+        if (!legend) {
+            addLegend();
+        }
 
         // Remove existing layer if it exists
         if (geojsonLayer) map.removeLayer(geojsonLayer);
@@ -347,7 +565,7 @@
         let pieChartOptions =
           chartType === "pie"
             ? {
-                responsive: false, // Allow manual size control
+                responsive: true, // Allow manual size control
                 maintainAspectRatio: false, // Prevent automatic resizing
               }
             : {};

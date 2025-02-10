@@ -1,130 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Africa Geoscience Metadata Platform</title>
-      
-        <!-- ✅ Stylesheets -->
-        <link rel="stylesheet" href="styles/styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-      
-        <!-- ✅ Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-      
-        <!-- ✅ Leaflet CSS (For Maps) -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-      
-        <!-- ✅ Leaflet JS (For Maps) -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      </head>
-      
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Africa Geoscience Metadata Platform</title>
 
-  <!-- 🌍 Navigation Bar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Africa Geoscience Metadata Platform</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="geodata-inventory.html">Metadata Inventory</a></li>
-          <li class="nav-item"><a class="nav-link" href="african-projects.html">African Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="geodata-platforms.html">Geoscience Platforms</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <!-- 🌍 Language Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
-              Language
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">English</a></li>
-              <li><a class="dropdown-item" href="#">French</a></li>
-              <li><a class="dropdown-item" href="#">Portuguese</a></li>
-              <li><a class="dropdown-item" href="#">Swahili</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- ✅ Stylesheets -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- 🎯 Header Section -->
-  <header class="text-center">
-    <div class="container">
-      <h1>Welcome to the Africa Geoscience Metadata Platform</h1>
-      <p class="lead">Explore geospatial metadata, projects, and tools across Africa.</p>
-    </div>
-  </header>
+    <!-- ✅ Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- 🌍 Interactive Map Section -->
-<section id="map-section">
-  <div class="container">
-    <h2>Explore Africa’s Geospatial Metadata</h2>
-    <p>Click on the map regions to explore available geospatial datasets.</p>
-    <div id="map-container">
-      <div id="sidebar">
-        <h3>Preview of Available Data Categories</h3>
-        <p>Hover over a category to highlight regions on the map.</p>
-        <div class="sidebar-content"></div>
-      </div>
-      <div id="map"></div>
-    </div>
-  </div>
-</section>
+    <!-- ✅ Leaflet CSS (For Maps) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 
-  
-
-<!-- 📦 Geospatial Data Sections -->
-<section id="geospatial-data" class="content-section">
-    <div class="container">
-      <h2>Explore Geospatial Data</h2>
-      <p>Access key geospatial datasets, projects, and platforms across Africa.</p>
-  
-      <div class="row">
-        <div class="col-md-3.5">
-          <section id="geodata">
-            <h3>Geodata Inventory</h3>
-            <p>Search and explore metadata for geospatial datasets.</p>
-            <a href="geodata-inventory.html" class="btn btn-primary">Explore Data</a>
-          </section>
-        </div>
-        <div class="col-md-3.5">
-          <section id="projects">
-            <h3>African Projects</h3>
-            <p>Discover ongoing, upcoming, and completed geoscience projects.</p>
-            <a href="african-projects.html" class="btn btn-primary">View Projects</a>
-          </section>
-        </div>
-        <div class="col-md-3.5">
-          <section id="platforms">
-            <h3>Geodata Platforms</h3>
-            <p>Explore tools and platforms for geospatial analysis.</p>
-            <a href="geodata-platforms.html" class="btn btn-primary">Discover Platforms</a>
-          </section>
+    <!-- ✅ Leaflet JS (For Maps) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <!-- 🌍 Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          >Africa Geoscience Metadata Platform</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="geodata-inventory.html"
+                >Metadata Inventory</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="african-projects.html"
+                >African Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="geodata-platforms.html"
+                >Geoscience Platforms</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <!-- 🌍 Language Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="languageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Language
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">English</a></li>
+                <li><a class="dropdown-item" href="#">French</a></li>
+                <li><a class="dropdown-item" href="#">Portuguese</a></li>
+                <li><a class="dropdown-item" href="#">Swahili</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-  
+    </nav>
 
-  <!-- 📜 Footer -->
-  <footer>
-    <p>&copy; 2025 Africa Geoscience Metadata Platform</p>
-  </footer>
+    <!-- 🎯 Header Section -->
+    <header class="text-center">
+      <div class="container">
+        <h1>Welcome to the Africa Geoscience Metadata Platform</h1>
+        <p class="lead">
+          Explore geospatial metadata, projects, and tools across Africa.
+        </p>
+      </div>
+    </header>
 
-  <!-- ✅ Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 🌍 Interactive Map Section -->
+    <section id="map-section">
+      <div class="container">
+        <h2>Explore Africa’s Geospatial Metadata</h2>
+        <p>
+          Click on the map regions to explore available geospatial datasets.
+        </p>
+        <div id="map-container">
+          <div id="sidebar">
+            <h3>Preview of Available Data Categories</h3>
+            <p>Hover over a category to highlight regions on the map.</p>
+            <div class="sidebar-content"></div>
+          </div>
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ✅ Leaflet JS (Must be loaded before the map script) -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- 📦 Geospatial Data Sections -->
+    <section id="geospatial-data" class="content-section">
+      <div class="container">
+        <h2>Explore Geospatial Data</h2>
+        <p>
+          Access key geospatial datasets, projects, and platforms across Africa.
+        </p>
 
-  <!-- ✅ Your Custom JavaScript -->
-  <script src="scripts/main.js"></script>
-</body>
+        <div class="row">
+          <div class="col-md-3.5">
+            <section id="geodata">
+              <h3>Geodata Inventory</h3>
+              <p>Search and explore metadata for geospatial datasets.</p>
+              <a href="geodata-inventory.html" class="btn btn-primary"
+                >Explore Data</a
+              >
+            </section>
+          </div>
+          <div class="col-md-3.5">
+            <section id="projects">
+              <h3>African Projects</h3>
+              <p>
+                Discover ongoing, upcoming, and completed geoscience projects.
+              </p>
+              <a href="african-projects.html" class="btn btn-primary"
+                >View Projects</a
+              >
+            </section>
+          </div>
+          <div class="col-md-3.5">
+            <section id="platforms">
+              <h3>Geodata Platforms</h3>
+              <p>Explore tools and platforms for geospatial analysis.</p>
+              <a href="geodata-platforms.html" class="btn btn-primary"
+                >Discover Platforms</a
+              >
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📜 Footer -->
+    <footer>
+      <p>&copy; 2025 Africa Geoscience Metadata Platform</p>
+    </footer>
+
+    <!-- ✅ Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ✅ Leaflet JS (Must be loaded before the map script) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- ✅ Your Custom JavaScript -->
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
-

@@ -9,16 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Fetch and Display a Featured Dataset
-    fetch('data/datasets.json')
-        .then(response => response.json())
-        .then(data => {
-            if (data.length > 0) {
-                const randomDataset = data[Math.floor(Math.random() * data.length)];
-                document.querySelector('#geodata p').innerHTML += `<br><strong>Featured Dataset:</strong> ${randomDataset.title}`;
-            }
-        })
-        .catch(error => console.error('Error loading datasets:', error));
 
     // Language Dropdown Fix
     const dropdownToggle = document.getElementById('languageDropdown');
@@ -58,16 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // **Dataset Field Mapping (Restored from Old Code)**
     const fieldMappings = {
-        "25_50K": "Map Scales (25-50 K)",
-        "Structural": "Structural Geology",
-        "ENERGY": "Energy",
-        "Seismic_GE": "Geophysics (Seismic)",
-        "NUCLEAR EN": "ENuclear Energy",
-        "Hydrology_": "Hydrology",
+        "25_50K": "Geological Map Scales (25-50K)",
+        "1mio": "Geological Map Scales (1 mio)",
+        "Engineerin": "Engineering Geology in Mapping",
+        "Geohazard_": "Engineering Geology (Geohazard)",
+        "Soil_GEOCH": "Geochemistry (Soil)",
+        "Gravity_GE": "Geophyics (Gravity)",
         "MINERAL RE": "Mineral Resources",
-        "MINING": "Mining",
-        "SOIL": "Soil",
-        "LANDUSE": "Landuse",
+        "HYDROGEOLO": "Hydrogeology",
+        "Energy_GEO": "Geothermal (Energy)",
+        "Medical Ge": "Medical Geology",
     };
 
     let geojsonLayer;
