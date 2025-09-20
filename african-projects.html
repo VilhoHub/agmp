@@ -10,7 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ✅ Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -78,32 +81,150 @@
         </div>
       </nav>
 
-    <!-- 🌟 African Projects Section -->
-    <section id="projects">
-        <div id="container" class="container">
-            <h2>African Geoscience Projects</h2>
-            <p class="lead">Explore geoscience initiatives shaping Africa’s future.</p>
+    <!-- 🌍 Redesigned African Projects -->
+    <section id="main" class="projects-main">
+      <div class="container-fluid">
+        <!-- Stunning Hero Header -->
+        <div class="projects-hero-redesigned">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-8">
+                <h1 class="hero-title gradient-text">African Geoscience Projects</h1>
+                <p class="hero-subtitle">Discover groundbreaking geoscience initiatives transforming Africa's understanding of its geological heritage and natural resources</p>
+              </div>
+              <div class="col-lg-4">
+                <div class="hero-stats-grid">
+                  <div class="hero-stat">
+                    <div class="stat-icon">
+                      <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number" id="totalProjects">-</span>
+                      <span class="stat-label">Active Projects</span>
+                    </div>
+                  </div>
+                  <div class="hero-stat">
+                    <div class="stat-icon">
+                      <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <div class="stat-content">
+                      <span class="stat-number">54</span>
+                      <span class="stat-label">Countries</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- 🔍 Search & Filter -->
-            <div class="search-filter">
-                <input type="text" id="search" placeholder="Search projects..." onkeyup="filterProjects()">
-                <select id="category-filter" onchange="filterProjects()">
-                    <option value="all">All Categories</option>
-                    <option value="geological">Geological</option>
-                    <option value="hydrology">Hydrology</option>
-                    <option value="seismic">Seismic Studies</option>
-                </select>
-                <select id="status-filter" onchange="filterProjects()">
-                    <option value="all">All Status</option>
-                    <option value="ongoing">Ongoing</option>
-                    <option value="completed">Completed</option>
-                    <option value="upcoming">Upcoming</option>
-                </select>
+        <!-- Project Dashboard Layout -->
+        <div class="projects-dashboard-layout">
+          <!-- Filter Panel -->
+          <div class="projects-control-panel modern-card">
+            <div class="panel-header">
+              <h3><i class="fas fa-filter"></i> Project Filters</h3>
+            </div>
+            
+            <div class="control-section">
+              <label class="control-label">
+                <i class="fas fa-search"></i> Search Projects
+              </label>
+              <input type="text" id="search" class="modern-input" placeholder="Search by title, description, or organization...">
             </div>
 
-            <!-- 🏗️ Project Grid -->
-            <div id="project-grid" class="projects-grid"></div>
+            <div class="control-section">
+              <label class="control-label">
+                <i class="fas fa-tags"></i> Category
+              </label>
+              <select id="category-filter" class="modern-select">
+                <option value="all">All Categories</option>
+                <option value="geological">Geological</option>
+                <option value="hydrology">Hydrology</option>
+                <option value="seismic">Seismic Studies</option>
+                <option value="mining">Mining & Resources</option>
+                <option value="environmental">Environmental</option>
+                <option value="energy">Energy</option>
+                <option value="research">Research</option>
+                <option value="general">General</option>
+              </select>
+            </div>
+
+            <div class="control-section">
+              <label class="control-label">
+                <i class="fas fa-clock"></i> Project Status
+              </label>
+              <select id="status-filter" class="modern-select">
+                <option value="all">All Status</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+                <option value="upcoming">Upcoming</option>
+              </select>
+            </div>
+
+            <div class="control-section">
+              <label class="control-label">
+                <i class="fas fa-map-marker-alt"></i> Country/Region
+              </label>
+              <select id="country-filter" class="modern-select">
+                <option value="all">All Countries</option>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+
+            <div class="control-section">
+              <button id="clearFilters" class="btn btn-outline-secondary w-100">
+                <i class="fas fa-refresh"></i> Clear All Filters
+              </button>
+            </div>
+
+            <!-- Project Statistics -->
+            <div class="projects-analytics-panel">
+              <h4><i class="fas fa-chart-bar"></i> Project Overview</h4>
+              <div class="projects-summary">
+                <div class="summary-item">
+                  <span class="summary-label">Ongoing:</span>
+                  <span class="summary-value" id="ongoingProjects">-</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Completed:</span>
+                  <span class="summary-value" id="completedProjects">-</span>
+                </div>
+                <div class="summary-item">
+                  <span class="summary-label">Upcoming:</span>
+                  <span class="summary-value" id="upcomingProjects">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-content-area">
+            <div class="projects-header-redesigned">
+              <div class="projects-title-section">
+                <h3><i class="fas fa-list"></i> Project Directory</h3>
+                <p class="projects-subtitle" id="resultCount">Loading projects...</p>
+              </div>
+              <div class="projects-view-controls">
+                <button class="control-btn active" id="gridView" title="Grid View">
+                  <i class="fas fa-th"></i>
+                </button>
+                <button class="control-btn" id="listView" title="List View">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+            
+            <div id="project-grid" class="projects-grid-redesigned">
+              <!-- Projects will be loaded here -->
+              <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading African geoscience projects...</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- 📜 Footer -->
@@ -113,7 +234,22 @@
 
     <!-- ✅ Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/projects.js"></script>
+
+    <!-- ✅ Fallback Script (Error Prevention) -->
+    <script src="scripts/fallback.js"></script>
+    
+    <!-- ✅ AGMP Modular JavaScript Architecture -->
+    <script src="scripts/modules/animations.js" onerror="console.warn('Failed to load animations.js')"></script>
+    <script src="scripts/modules/navigation.js" onerror="console.warn('Failed to load navigation.js')"></script>
+    <script src="scripts/modules/dataManager.js" onerror="console.warn('Failed to load dataManager.js')"></script>
+    
+    <!-- ✅ Main Application Controller -->
+    <script src="scripts/app.js" onerror="console.warn('Failed to load app.js')"></script>
+    
+    <!-- ✅ African Projects Functionality -->
+    <script src="scripts/projects.js" onerror="console.warn('Failed to load projects.js')"></script>
+    
+    <!-- ✅ Legacy Support (for existing functionality) -->
+    <script src="scripts/main.js" onerror="console.warn('Failed to load main.js')"></script>
 </body>
 </html>

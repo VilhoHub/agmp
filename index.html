@@ -14,8 +14,14 @@
 
     <!-- ✅ Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
+    />
+    
+    <!-- ✅ Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <!-- ✅ Leaflet CSS (For Maps) -->
@@ -91,13 +97,41 @@
       </div>
     </nav>
 
-    <!-- 🎯 Header Section -->
+    <!-- 🎯 Stunning Hero Section -->
     <header class="text-center">
       <div class="container">
-        <h1>Welcome to the Africa Geoscience Metadata Platform</h1>
+        <h1 class="gradient-text">Welcome to the Africa Geoscience Metadata Platform</h1>
         <p class="lead">
-          Explore geospatial metadata, projects, and tools across Africa.
+          Explore geospatial metadata, projects, and tools across Africa with cutting-edge technology.
         </p>
+        <div class="hero-stats mt-4">
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-6">
+              <div class="stat-item floating">
+                <h3 class="stat-number">54</h3>
+                <p class="stat-label">African Countries</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item floating" style="animation-delay: 0.5s;">
+                <h3 class="stat-number">1000+</h3>
+                <p class="stat-label">Datasets</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item floating" style="animation-delay: 1s;">
+                <h3 class="stat-number">25+</h3>
+                <p class="stat-label">Active Projects</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="stat-item floating" style="animation-delay: 1.5s;">
+                <h3 class="stat-number">15+</h3>
+                <p class="stat-label">Platforms</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -127,35 +161,51 @@
           Access key geospatial datasets, projects, and platforms across Africa.
         </p>
 
-        <div class="row">
-          <div class="col-md-3.5">
-            <section id="geodata">
-              <h3>Geodata Inventory</h3>
-              <p>Search and explore metadata for geospatial datasets.</p>
-              <a href="geodata-inventory.html" class="btn btn-primary"
-                >Explore Data</a
-              >
-            </section>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="modern-card text-center">
+              <div class="card-icon mb-3">
+                <i class="fas fa-database fa-3x" style="color: var(--primary-color);"></i>
+              </div>
+              <h3 class="gradient-text">Geodata Inventory</h3>
+              <p>Search and explore comprehensive metadata for geospatial datasets across Africa.</p>
+              <div class="card-stats mb-3">
+                <small class="text-muted">1000+ Datasets Available</small>
+              </div>
+              <a href="geodata-inventory.html" class="btn btn-primary pulse">
+                Explore Data
+              </a>
+            </div>
           </div>
-          <div class="col-md-3.5">
-            <section id="projects">
-              <h3>African Projects</h3>
-              <p>
-                Discover ongoing, upcoming, and completed geoscience projects.
-              </p>
-              <a href="african-projects.html" class="btn btn-primary"
-                >View Projects</a
-              >
-            </section>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="modern-card text-center">
+              <div class="card-icon mb-3">
+                <i class="fas fa-project-diagram fa-3x" style="color: var(--secondary-color);"></i>
+              </div>
+              <h3 class="gradient-text">African Projects</h3>
+              <p>Discover ongoing, upcoming, and completed geoscience projects across the continent.</p>
+              <div class="card-stats mb-3">
+                <small class="text-muted">25+ Active Initiatives</small>
+              </div>
+              <a href="african-projects.html" class="btn btn-primary pulse">
+                View Projects
+              </a>
+            </div>
           </div>
-          <div class="col-md-3.5">
-            <section id="platforms">
-              <h3>Geodata Platforms</h3>
-              <p>Explore tools and platforms for geospatial analysis.</p>
-              <a href="geodata-platforms.html" class="btn btn-primary"
-                >Discover Platforms</a
-              >
-            </section>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="modern-card text-center">
+              <div class="card-icon mb-3">
+                <i class="fas fa-tools fa-3x" style="color: var(--accent-color);"></i>
+              </div>
+              <h3 class="gradient-text">Geodata Platforms</h3>
+              <p>Explore cutting-edge tools and platforms for advanced geospatial analysis.</p>
+              <div class="card-stats mb-3">
+                <small class="text-muted">15+ Professional Tools</small>
+              </div>
+              <a href="geodata-platforms.html" class="btn btn-primary pulse">
+                Discover Platforms
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -172,7 +222,19 @@
     <!-- ✅ Leaflet JS (Must be loaded before the map script) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- ✅ Your Custom JavaScript -->
-    <script src="scripts/main.js"></script>
+    <!-- ✅ Fallback Script (Error Prevention) -->
+    <script src="scripts/fallback.js"></script>
+    
+    <!-- ✅ AGMP Modular JavaScript Architecture -->
+    <script src="scripts/modules/animations.js" onerror="console.warn('Failed to load animations.js')"></script>
+    <script src="scripts/modules/navigation.js" onerror="console.warn('Failed to load navigation.js')"></script>
+    <script src="scripts/modules/mapManager.js" onerror="console.warn('Failed to load mapManager.js')"></script>
+    <script src="scripts/modules/dataManager.js" onerror="console.warn('Failed to load dataManager.js')"></script>
+    
+    <!-- ✅ Main Application Controller -->
+    <script src="scripts/app.js" onerror="console.warn('Failed to load app.js')"></script>
+    
+    <!-- ✅ Legacy Support (for existing functionality) -->
+    <script src="scripts/main.js" onerror="console.warn('Failed to load main.js')"></script>
   </body>
 </html>

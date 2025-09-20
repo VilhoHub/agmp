@@ -10,7 +10,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- ✅ Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- ✅ Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -78,58 +81,160 @@
     </div>
   </nav>
 
-  <!-- ℹ️ About Section -->
+  <!-- ℹ️ Stunning About Section -->
   <section id="about">
     <div class="container">
-      <h2>About Africa Geoscience Metadata Platform</h2>
-      <p class="lead">A unified hub for geospatial data, projects, and platforms across Africa.</p>
+      <div class="text-center mb-5">
+        <h2 class="gradient-text">About Africa Geoscience Metadata Platform</h2>
+        <p class="lead">A unified hub for geospatial data, projects, and platforms across Africa.</p>
+      </div>
 
-      <div class="row">
+      <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <h3>Our Vision</h3>
-          <p>Empowering Africa with accessible, high-quality geoscience data to support innovation, sustainability, and informed decision-making.</p>
-
-          <h3>What We Do</h3>
-          <ul>
-            <li>Provide a comprehensive geospatial metadata repository.</li>
-            <li>Support ongoing and completed geospatial projects.</li>
-            <li>Connect users with geospatial analysis tools and platforms.</li>
-            <li>Enable data-driven decision-making** for policymakers, researchers, and businesses.</li>
-          </ul>
+          <div class="modern-card">
+            <div class="card-icon text-center mb-4">
+              <i class="fas fa-eye fa-3x" style="color: var(--primary-color);"></i>
+            </div>
+            <h3 class="gradient-text text-center">Our Vision</h3>
+            <p>Empowering Africa with accessible, high-quality geoscience data to support innovation, sustainability, and informed decision-making across the continent.</p>
+          </div>
         </div>
         <div class="col-md-6">
-          <img src="assets\cover3.jpg" alt="Geoscience Collaboration" class="img-fluid rounded shadow">
+          <div class="modern-card">
+            <div class="card-icon text-center mb-4">
+              <i class="fas fa-cogs fa-3x" style="color: var(--secondary-color);"></i>
+            </div>
+            <h3 class="gradient-text text-center">What We Do</h3>
+            <ul class="modern-list">
+              <li><i class="fas fa-database"></i> Comprehensive geospatial metadata repository</li>
+              <li><i class="fas fa-project-diagram"></i> Support ongoing and completed projects</li>
+              <li><i class="fas fa-link"></i> Connect users with analysis tools and platforms</li>
+              <li><i class="fas fa-chart-line"></i> Enable data-driven decision-making</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <img src="assets/cover3.jpg" alt="Geoscience Collaboration" class="img-fluid rounded shadow floating" style="border-radius: 20px !important;">
+        </div>
+        <div class="col-md-6">
+          <div class="modern-card">
+            <h3 class="gradient-text">Why Choose AGMP?</h3>
+            <p>We bridge the gap between data providers and users, ensuring that reliable, organized, and insightful geospatial information is available for decision-making.</p>
+            
+            <div class="stats-grid mt-4">
+              <div class="stat-item-small">
+                <h4 class="stat-number">54</h4>
+                <p class="stat-label">Countries</p>
+              </div>
+              <div class="stat-item-small">
+                <h4 class="stat-number">1000+</h4>
+                <p class="stat-label">Datasets</p>
+              </div>
+              <div class="stat-item-small">
+                <h4 class="stat-number">25+</h4>
+                <p class="stat-label">Projects</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <h3>Why Choose AGMP?</h3>
-      <p>We bridge the gap between data providers** and users, ensuring that reliable, organized, and insightful geospatial information is available for decision-making.</p>
-
-      <!-- 🏗️ Collaboration Section -->
-      <div class="collaborators">
-        <h3>Our Collaborators</h3>
-        <p>We work with a diverse range of partners, including:</p>
-        <ul>
-          <li>Government Agencies (for infrastructure planning and policy-making).</li>
-          <li>Research Institutions & Universities** (for scientific studies and analysis).</li>
-          <li>Private Sector Companies (for geospatial applications in industry).</li>
-          <li>International Organizations (for global collaboration on geoscience initiatives).</li>
-        </ul>
+      <!-- 🏗️ Modern Collaboration Section -->
+      <div class="collaborators mt-5">
+        <div class="text-center mb-4">
+          <h3 class="gradient-text">Our Collaborators</h3>
+          <p>We work with a diverse range of partners across Africa and globally:</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-3">
+            <div class="modern-card text-center h-100">
+              <i class="fas fa-university fa-2x mb-3" style="color: var(--primary-color);"></i>
+              <h5>Government Agencies</h5>
+              <p class="small">Infrastructure planning and policy-making</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-3">
+            <div class="modern-card text-center h-100">
+              <i class="fas fa-graduation-cap fa-2x mb-3" style="color: var(--secondary-color);"></i>
+              <h5>Research Institutions</h5>
+              <p class="small">Scientific studies and analysis</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-3">
+            <div class="modern-card text-center h-100">
+              <i class="fas fa-building fa-2x mb-3" style="color: var(--accent-color);"></i>
+              <h5>Private Sector</h5>
+              <p class="small">Geospatial applications in industry</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-3">
+            <div class="modern-card text-center h-100">
+              <i class="fas fa-globe-africa fa-2x mb-3" style="color: var(--earth-brown);"></i>
+              <h5>International Orgs</h5>
+              <p class="small">Global collaboration initiatives</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- 🌍 Data Themes Section -->
-      <h3>Key Metadata</h3>
-      <div class="row">
-        <div class="col-md-4"><strong>Geological Map Scales</strong></div>
-        <div class="col-md-4"><strong>Economic Geology</strong></div>
-        <div class="col-md-4"><strong>Geophysics</strong></div>
-        <div class="col-md-4"><strong>Engineering Mapping</strong></div>
-        <div class="col-md-4"><strong>Environmental Geology</strong></div>
-        <div class="col-md-4"><strong>Geodata Portal</strong></div>
+      <!-- 🌍 Modern Data Themes Section -->
+      <div class="mt-5">
+        <div class="text-center mb-4">
+          <h3 class="gradient-text">Key Metadata Categories</h3>
+          <p>Comprehensive geoscience data across multiple domains</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-map fas-lg"></i>
+              <strong>Geological Map Scales</strong>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-coins fas-lg"></i>
+              <strong>Economic Geology</strong>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-magnet fas-lg"></i>
+              <strong>Geophysics</strong>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-hammer fas-lg"></i>
+              <strong>Engineering Mapping</strong>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-leaf fas-lg"></i>
+              <strong>Environmental Geology</strong>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-3">
+            <div class="category-card">
+              <i class="fas fa-globe fas-lg"></i>
+              <strong>Geodata Portal</strong>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h3>Get Involved</h3>
-      <p>Interested in contributing, collaborating, or using our platform? <a href="contact.html">Reach out to us</a> today!</p>
+      <div class="text-center mt-5">
+        <div class="modern-card">
+          <h3 class="gradient-text">Get Involved</h3>
+          <p>Interested in contributing, collaborating, or using our platform?</p>
+          <a href="contact.html" class="btn btn-primary pulse">Reach Out to Us Today</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -140,6 +245,16 @@
 
   <!-- ✅ Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="scripts/main.js"></script>
+  
+  <!-- ✅ Fallback Script (Error Prevention) -->
+  <script src="scripts/fallback.js"></script>
+  
+  <!-- ✅ AGMP Modular JavaScript Architecture -->
+  <script src="scripts/modules/animations.js" onerror="console.warn('Failed to load animations.js')"></script>
+  <script src="scripts/modules/navigation.js" onerror="console.warn('Failed to load navigation.js')"></script>
+  <script src="scripts/modules/dataManager.js" onerror="console.warn('Failed to load dataManager.js')"></script>
+  
+  <!-- ✅ Main Application Controller -->
+  <script src="scripts/app.js" onerror="console.warn('Failed to load app.js')"></script>
 </body>
 </html>
