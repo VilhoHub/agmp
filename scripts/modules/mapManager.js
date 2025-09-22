@@ -26,11 +26,12 @@ const MapManager = {
             touchZoom: false
         }).setView([0, 20], 3);
 
-        // Add reliable tile layer
+        // Add monochrome tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 5,
-            minZoom: 3
+            minZoom: 3,
+            className: 'map-monochrome'
         }).addTo(this.map);
 
         // Set Africa bounds
@@ -47,9 +48,6 @@ const MapManager = {
             position: 'topright'
         });
         this.map.addControl(zoomControl);
-
-        // Add custom legend
-        this.addLegend();
     },
 
     // 📊 Load and display map data
@@ -73,26 +71,26 @@ const MapManager = {
         }
     },
 
-    // 🎨 Country styling function
+    // 🎨 Country styling function - Monochrome
     getCountryStyle(feature) {
         return {
-            fillColor: '#d68614',
-            weight: 2,
-            opacity: 1,
-            color: '#6C584C',
-            dashArray: '3',
-            fillOpacity: 0.3
+            fillColor: '#888888',
+            weight: 1,
+            opacity: 0.8,
+            color: '#555555',
+            dashArray: '',
+            fillOpacity: 0.4
         };
     },
 
-    // 🖱️ Country interaction handlers
+    // 🖱️ Country interaction handlers - No country names displayed
     onEachCountry(feature, layer) {
         const countryName = feature.properties.NAME || feature.properties.name || 'Unknown';
         
-        // Popup content
+        // Popup content without country name
         const popupContent = `
             <div class="map-popup">
-                <h5 class="gradient-text">${countryName}</h5>
+                <h5 class="gradient-text">African Region</h5>
                 <p>Click to explore geoscience data for this region</p>
                 <button class="btn btn-primary btn-sm" onclick="MapManager.exploreCountry('${countryName}')">
                     Explore Data
@@ -110,14 +108,14 @@ const MapManager = {
         });
     },
 
-    // ✨ Country highlight effects
+    // ✨ Country highlight effects - Monochrome
     highlightCountry(e) {
         const layer = e.target;
         layer.setStyle({
-            weight: 3,
-            color: '#d85512',
+            weight: 2,
+            color: '#333333',
             dashArray: '',
-            fillOpacity: 0.6
+            fillOpacity: 0.7
         });
         layer.bringToFront();
     },
@@ -181,30 +179,6 @@ const MapManager = {
         document.body.appendChild(modal);
     },
 
-    // 🗺️ Add legend to map
-    addLegend() {
-        if (!this.map) return;
-
-        const legend = L.control({ position: 'bottomright' });
-        
-        legend.onAdd = function() {
-            const div = L.DomUtil.create('div', 'legend modern-card');
-            div.innerHTML = `
-                <h6 class="gradient-text">Data Availability</h6>
-                <div class="legend-item">
-                    <span class="legend-box available"></span>
-                    <span>Data Available</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-box limited"></span>
-                    <span>Limited Data</span>
-                </div>
-            `;
-            return div;
-        };
-
-        legend.addTo(this.map);
-    },
 
     // 🎯 Add fallback markers if GeoJSON fails
     addFallbackMarkers() {
@@ -252,9 +226,14 @@ const MapManager = {
     }
 };
 
-// Add required CSS for map popups
+// Add required CSS for map popups and monochrome effect
 const mapStyles = document.createElement('style');
 mapStyles.textContent = `
+    /* Monochrome map tiles */
+    .map-monochrome {
+        filter: grayscale(100%) contrast(120%) brightness(110%);
+    }
+    
     .map-popup {
         text-align: center;
         min-width: 200px;
@@ -286,10 +265,6 @@ mapStyles.textContent = `
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
-    }
-    
-    .legend-box.limited {
-        background-color: #e5c263;
     }
 `;
 document.head.appendChild(mapStyles);

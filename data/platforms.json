@@ -1,5 +1,12 @@
 [
   {
+    "Topic/Website": "African Space Agency",
+    "What is on the Website": "The African Space Agency (AfSA) is an intergovernmental agency focused on the development, coordination, and promotion of space activities across Africa. The site provides information on their missions, strategic objectives, news, press releases, member states, governance structures, and initiatives in space science, policy formulation, and space-based solutions for sustainable development.",
+    "Powered by": "Not explicitly stated",
+    "Available Link": "https://africanspaceagency.org/",
+    "Logos": "assets/African Space Agency.png"
+  },  
+  {
     "Topic/Website": "Africa GeoPortal",
     "What is on the Website": "A platform which offers a range of geospatial tools and datasets which are focused on Africa.  Resources available:  OpenStreetMap data, satellite imagery as well as thematic maps.  Geospatial data is shared, analyzed and combined by users and oragnizations. ",
     "Powered by": "Esri",

@@ -136,7 +136,7 @@ class GeodataInventory {
         }
     }
 
-    // 🗺️ Initialize the map
+    // 🗺️ Initialize the map - Monochrome with locked Africa view
     initializeMap() {
         const mapContainer = document.getElementById('map');
         if (!mapContainer) {
@@ -160,24 +160,56 @@ class GeodataInventory {
         mapContainer.innerHTML = '';
 
         try {
-            this.map = L.map('map').setView([0, 20], 3);
+            // Initialize map with restricted controls and locked to Africa
+            this.map = L.map('map', {
+                zoomControl: false,
+                scrollWheelZoom: true,
+                doubleClickZoom: true,
+                touchZoom: true,
+                boxZoom: false,
+                keyboard: false
+            }).setView([0, 20], 3);
             console.log('✅ Map initialized successfully');
         } catch (error) {
             console.error('Failed to initialize map:', error);
             throw error;
         }
 
-        // Add tile layer
+        // Add monochrome tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
-            maxZoom: 6,
-            minZoom: 2
+            maxZoom: 7,
+            minZoom: 3,
+            className: 'inventory-map-monochrome'
         }).addTo(this.map);
 
-        // Set Africa bounds
+        // Set strict Africa bounds - locked camera
         const africaBounds = [[-35, -20], [40, 55]];
         this.map.setMaxBounds(africaBounds);
         this.map.fitBounds(africaBounds);
+        
+        // Add custom zoom controls in top right
+        const zoomControl = L.control.zoom({
+            position: 'topright'
+        });
+        this.map.addControl(zoomControl);
+        
+        // Prevent zooming out beyond Africa view
+        this.map.on('zoomend', () => {
+            if (this.map.getZoom() < 3) {
+                this.map.setZoom(3);
+            }
+        });
+        
+        // Keep map centered on Africa
+        this.map.on('moveend', () => {
+            const bounds = this.map.getBounds();
+            const africaBounds = L.latLngBounds([[-35, -20], [40, 55]]);
+            
+            if (!africaBounds.contains(bounds)) {
+                this.map.fitBounds(africaBounds);
+            }
+        });
     }
 
     // 🎛️ Setup control dropdowns
@@ -330,23 +362,23 @@ class GeodataInventory {
         return analysis;
     }
 
-    // 🎨 Get country styling based on data availability
+    // 🎨 Get country styling based on data availability - Meaningful colors on monochrome base
     getCountryStyle(feature, fieldName) {
         const countryName = feature.properties.NAME || feature.properties.name;
         const dataset = this.datasets.find(d => d.Country === countryName);
         
         if (!dataset) {
             return {
-                fillColor: '#cccccc',
+                fillColor: '#e0e0e0',
                 weight: 1,
-                opacity: 1,
+                opacity: 0.8,
                 color: '#999999',
-                fillOpacity: 0.7
+                fillOpacity: 0.6
             };
         }
 
         const value = dataset[fieldName];
-        let fillColor = '#cccccc';
+        let fillColor = '#e0e0e0';
         
         if (value === 'Yes') {
             fillColor = '#4CAF50'; // Green for available
@@ -358,20 +390,20 @@ class GeodataInventory {
 
         return {
             fillColor: fillColor,
-            weight: 2,
-            opacity: 1,
-            color: '#ffffff',
+            weight: 1,
+            opacity: 0.8,
+            color: '#555555',
             fillOpacity: 0.8
         };
     }
 
-    // 🖱️ Handle country interactions
+    // 🖱️ Handle country interactions - No country names displayed
     onEachCountry(feature, layer, fieldName) {
         const countryName = feature.properties.NAME || feature.properties.name;
         const dataset = this.datasets.find(d => d.Country === countryName);
         
         let popupContent = `<div class="map-popup">
-            <h5>${countryName}</h5>`;
+            <h5>African Region</h5>`;
         
         if (dataset) {
             const value = dataset[fieldName];
@@ -390,14 +422,15 @@ class GeodataInventory {
         
         layer.bindPopup(popupContent);
 
-        // Hover effects
+        // Hover effects - Monochrome
         layer.on({
             mouseover: (e) => {
                 const layer = e.target;
                 layer.setStyle({
-                    weight: 3,
+                    weight: 2,
                     opacity: 1,
-                    fillOpacity: 1
+                    fillOpacity: 0.9,
+                    color: '#333333'
                 });
             },
             mouseout: (e) => {
@@ -420,7 +453,7 @@ class GeodataInventory {
             this.chart.destroy();
         }
 
-        // Create new chart
+        // Create new chart with meaningful colors
         this.chart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -688,9 +721,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add CSS for matrix and popup styling
+// Add CSS for matrix, popup styling, and monochrome map
 const matrixStyles = document.createElement('style');
 matrixStyles.textContent = `
+    /* Monochrome map tiles for inventory */
+    .inventory-map-monochrome {
+        filter: grayscale(100%) contrast(120%) brightness(110%);
+    }
+    
     .matrix-grid {
         display: grid;
         gap: 1.5rem;
